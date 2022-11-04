@@ -14,7 +14,7 @@ body {
     background-color: #121214;
     background-image: url(assets/blue.svg);
     background-position-x: center;
-    background-position-y: 50%;
+    background-position-y: -670px;
 }
 
 header {
@@ -36,7 +36,7 @@ header {
 }
 
 #datas > div > ul > h1 {
-    color: #338AF3;
+    color: #ffffff52;
     text-transform: uppercase;
 }
 
@@ -77,6 +77,12 @@ ul > #dias > li {
 
 ul > .proximo {
     padding-top: 24px;
+    border-top: 1px solid #ffffff52;
+}
+
+ul > .proximo > li + li {
+    margin-top: 20px;
+    padding-top: 20px;
     border-top: 1px solid #323238;
 }
 
