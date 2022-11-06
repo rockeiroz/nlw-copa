@@ -2,19 +2,42 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+@keyframes appear {
+    0% {
+        transform: translateY(-50px);
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+:root {
+    --cor: #338AF3;
+    --bg: url(assets/blue.svg);
+}
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box; /*fixa a largura da caixa*/
 }
 
+body.green {
+    --cor: #16aa16;
+    --bg: url(assets/green.svg);
+}
+
+body.yellow {
+    --cor: #caca35;
+    --bg: url(assets/yellow.svg);
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    background-color: #121214;
-    background-image: url(assets/blue.svg);
-    background-position-x: center;
-    background-position-y: -670px;
+    background: #121214 var(--bg) no-repeat center;
+    background-size: cover;
 }
 
 header {
@@ -24,26 +47,35 @@ header {
 
 #app {
     width: fit-content;
-    margin: 52px auto;
+    margin: auto;
+    padding-top: 52px;
 }
 
 .selecao {
     text-align: center;
     padding: 32px 23px;
     background-color: #1D1C19;
-    border-bottom: 2px solid #338AF3;
+    border-bottom: 2px solid var(--cor);
     border-radius: 6px;
+    display: inline-block;
+    margin: 30px;
+    animation: appear .2s forwards;
+    animation-delay: .2s;
+}
+
+.selecao:nth-child(2) {
+    animation-delay: .4s;
 }
 
 #datas > div > ul > h1 {
-    color: #ffffff52;
+    color: var(--cor);
     text-transform: uppercase;
 }
 
 ul > #dias > h2 {
     color: #F7DD43;
     padding: 8px 16px;
-    border: 1px solid #338AF3;
+    border: 1px solid var(--cor);
     border-radius: 6px;
     display: flex;
     gap: 16px;
@@ -92,6 +124,9 @@ ul > #dias > li > strong {
     line-height: 125%;
 }
 
-#datas > .selecao {
-    display: inline-block;
+ul > #dias > h2:hover,
+ul > #dias > li > img:hover, 
+ul > #dias > li > strong:hover {
+    transform: scale(1.1);
+    transition-duration: 0.3s;
 }
