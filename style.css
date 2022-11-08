@@ -72,6 +72,10 @@ header {
     text-transform: uppercase;
 }
 
+#datas {
+    text-align: center;
+}
+
 ul > #dias > h2 {
     color: #F7DD43;
     padding: 8px 16px;
